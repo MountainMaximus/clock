@@ -1,0 +1,28 @@
+@use "../../scss/var.scss" as *;
+@use 'sass:color';
+
+.root {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+  color: $white;
+  background-color: $blue;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: color.scale($blue, $lightness: -20%);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px color.scale($blue, $lightness: -20%);
+  }
+}

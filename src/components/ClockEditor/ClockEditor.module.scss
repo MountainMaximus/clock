@@ -1,0 +1,50 @@
+@use 'sass:color';
+@use "../../scss/var.scss" as *;
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  .clocks {
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .skeleton {
+    margin: 0 auto;
+    cursor: progress;
+    border-radius: 5px;
+    font-size: 0;
+    color: transparent;
+    background-size: 300% 100%;
+    background-image: linear-gradient(
+      to right,
+      color.scale($lighten, $lightness: -40%),
+      $lighten,
+      color.scale($lighten, $lightness: -40%),
+      $lighten
+    );
+    animation: k-background 2s ease-in-out infinite;
+    &.clock {
+      width: 220px;
+      height: 340px;
+      margin-bottom: 10px;
+    }
+    &.button {
+      width: 12rem;
+      height: 2rem;
+    }
+  }
+}
+
+@keyframes k-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

@@ -1,0 +1,22 @@
+$gray: #4e4e4e;
+$black: #373748;
+$red: #a74141;
+$white: #f6f6f6;
+$blue: #007bff;
+$lighten: #e6e1e1;
+
+
+
+
+
+$hd-bp: 2300px;
+$laptop-bp: 1280px;
+$tablet-bp: 991px;
+$tablet-mini-bp: 750px;
+$mobile-bp: 575px;
+
+@mixin breakpoint($bp) {
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}

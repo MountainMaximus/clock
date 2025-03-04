@@ -1,0 +1,79 @@
+@use 'sass:color';
+@use "./var.scss" as *;
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 30px;
+  @include breakpoint($tablet-bp) {
+    font-size: 20px;
+  }
+  @include breakpoint($mobile-bp) {
+    font-size: 14px;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  line-height: 1.2;
+  color: $black;
+  background-color: $lighten;
+  overflow: auto;
+}
+button:focus {
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: $gray color.scale($white, $lightness: -40%);
+
+  &::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: color.scale($white, $lightness: -40%);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray;
+    border-radius: 5px;
+    border: 3px solid color.scale($white, $lightness: -40%);
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
